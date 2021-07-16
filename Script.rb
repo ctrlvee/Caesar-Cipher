@@ -1,17 +1,17 @@
 require 'pry-byebug'
+upLetters = 
 
 def cipher(txt, key)
- 
-  broken = txt.bytes #returns ascii code broken in to array
-  
+  broken = txt.bytes
   addKey = broken.map do |ascii|
+    
+    if /Z/ =~ "#{ascii.chr}" 
+      puts 'hi'
+    end
     new_letter = (ascii + key).chr
   end
-
   combine_key = addKey.join
-  
-
-  binding.pry
+ # binding.pry
 end
 
-cipher('test',2)
+cipher('ZZZest',2)
