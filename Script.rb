@@ -1,9 +1,9 @@
 require 'pry-byebug'
-upLetters = ('A'..'Z').to_a
-lowLetters = ('a'..'z').to_a
 
 def cipher(txt, key)
-  broken = txt.split(//)
+ 
+  broken = txt.bytes #returns ascii code broken in to array
+  
   binding.pry
 end
 
