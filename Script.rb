@@ -1,7 +1,6 @@
 require 'pry-byebug'
 
 
-
 def cipher(txt, key)
   upLetters = *('A'..'Z')
   downLetters = *('a'..'z')
@@ -15,6 +14,7 @@ def cipher(txt, key)
     else
       new_letter = (ascii + key).chr
     end
+
   elsif downLetters.include?(ascii.chr)
     if (ascii + key) > 122
       difference = (ascii+key) - 122
@@ -27,8 +27,8 @@ def cipher(txt, key)
 
   end
   combine_key = addKey.join
-  binding.pry
+  
 
 end
-
-cipher('ZZZest',30)
+binding.pry
+cipher('ZZZest',26)
