@@ -7,12 +7,13 @@ def cipher(txt, key)
   returnWithkey()
 end
 
+#Update with correct conditional to identify if "og_ascii" exists between the values
 def checkPosition (og_ascii)
-  case (og_ascii)
-  when (65 <= og_ascii) || (og_ascii <= 90)
+  if og_ascii.between?(65,90)
     puts 'upper'
-  when (97 <= og_ascii) || (og_ascii <= 122)
+  elsif og_ascii.between?(97,122)
     puts 'lower'
+
   end
 end
 
