@@ -30,15 +30,14 @@ def addToLower(og_ascii)
   new_ascii.chr
 end
 
-#Update with correct conditional to identify if "og_ascii" exists between the values
+
 def checkPosition (og_ascii)
   if og_ascii.between?(65,90)
     addToUpper(og_ascii)
   elsif og_ascii.between?(97,122)
     addToLower(og_ascii)
-  else #returns whitespac/punctuation as the same
+  else
     og_ascii.chr
-    binding.pry
   end
 end
 
@@ -46,9 +45,5 @@ def returnWithkey
   add_key = @ascii_txt.map do |og_ascii|
     checkPosition(og_ascii)
   end
-  puts add_key.join()
+  ciphered = add_key.join('')
 end
-
-
-
-cipher('Wow! Don/t',4)
