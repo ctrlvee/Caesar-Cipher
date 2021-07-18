@@ -1,10 +1,11 @@
 require 'pry-byebug'
 
-def cipher(txt, key)
-  @txt = txt
-  @key = key
-  @ascii_txt = txt.bytes
+def cipher()
+  @txt = gets.chomp
+  @key = gets.to_i
+  @ascii_txt = @txt.bytes
   returnWithkey()
+ # binding.pry
 end
 
 def addToUpper(og_ascii)
@@ -45,5 +46,9 @@ def returnWithkey
   add_key = @ascii_txt.map do |og_ascii|
     checkPosition(og_ascii)
   end
+  
   ciphered = add_key.join('')
+  puts ciphered
 end
+
+cipher()
